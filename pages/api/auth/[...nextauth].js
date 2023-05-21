@@ -6,8 +6,8 @@ const authOptions = {
   // Configure one or more authentication providers
   providers: [
     GoogleProvider({
-      clientId: "625444603857-4igpobrhuviu4c5abrsonvsdastn6qnq.apps.googleusercontent.com",
-      clientSecret: "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"
+      clientId: process.env.GOOGLE_ID,
+      clientSecret: process.env.GOOGLE_SECRET
     }),
     CredentialsProvider({
         // The name to display on the sign in form (e.g. 'Sign in with...')
@@ -58,6 +58,6 @@ const authOptions = {
   pages: {
         signIn: '/auth/login'
   },
-  secret: "235a2df63aa5874d9b88a76a1c7208fe"
+  secret: process.env.NEXTAUTH_SECRET
 }
 export default NextAuth(authOptions)
