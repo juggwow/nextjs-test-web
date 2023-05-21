@@ -63,7 +63,7 @@ export default function IndexPage(props) {
     
     if(inputValue !== '' && name !== ''){
       setInputValue('')
-      fetch('http://localhost:3000/api/test', {
+      fetch('https://nextjs-test-web.vercel.app/api/test', {
         method: 'POST',
         headers: {
           "Content-Type": "application/json",
