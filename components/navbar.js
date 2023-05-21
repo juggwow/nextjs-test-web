@@ -8,7 +8,7 @@ export default function Navbar(){
         //alert('good evening')
         const action = confirm('ไปต่อหรือไม่')
         if (action){
-            router.push('/login')
+            router.push('/auth/login')
         }
         // else{
         //     router.back()
@@ -22,7 +22,7 @@ export default function Navbar(){
             <Link href="/">Home</Link>
             </div>
             <div>
-            <Link href="/login">Login</Link>
+            <Link href="/auth/login">Login</Link>
             </div>
             <div>
                 <button onClick={hello}>อะไร</button>

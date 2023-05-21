@@ -6,6 +6,5 @@ export default function ErrorPage(){
             <div>ไม่พบ</div>
             <div><Link href="/">กลับสู่หน้าหลัก</Link></div>
         </div>
-        
     )
 }
