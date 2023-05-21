@@ -6,8 +6,11 @@ const authOptions = {
   // Configure one or more authentication providers
   providers: [
     GoogleProvider({
-      clientId: process.env.GOOGLE_ID,
-      clientSecret: process.env.GOOGLE_SECRET
+      // clientId: process.env.GOOGLE_ID,
+      // clientSecret: process.env.GOOGLE_SECRET,
+
+      clientId: "625444603857-4igpobrhuviu4c5abrsonvsdastn6qnq.apps.googleusercontent.com",
+      clientSecret: "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",
     }),
     CredentialsProvider({
         // The name to display on the sign in form (e.g. 'Sign in with...')
