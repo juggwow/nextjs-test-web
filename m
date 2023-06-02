@@ -16,9 +16,9 @@
 //   },
 // })
 
-export { default } from "next-auth/middleware"
+// export { default } from "next-auth/middleware"
 
-export const config = {
-    matcher: ['/about','/test','/api/:path*']
-  }
+// export const config = {
+//     matcher: ['/about','/test','/api/:path*']
+//   }
 

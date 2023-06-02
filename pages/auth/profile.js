@@ -54,7 +54,7 @@ export default function ProfilePage({ data }) {
       body: JSON.stringify(req),
     });
     if (res.status === 200) {
-      router.push("/");
+      router.push("/auth/login");
     }
     const data = await res.json();
     window.alert(data.message);

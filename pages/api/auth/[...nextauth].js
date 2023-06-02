@@ -1,18 +1,18 @@
 import NextAuth from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
-import GoogleProvider from "next-auth/providers/google";
+//import GoogleProvider from "next-auth/providers/google";
 
 const authOptions = {
   // Configure one or more authentication providers
   providers: [
-    GoogleProvider({
-      // clientId: process.env.GOOGLE_ID,
-      // clientSecret: process.env.GOOGLE_SECRET,
+    // GoogleProvider({
+    //   // clientId: process.env.GOOGLE_ID,
+    //   // clientSecret: process.env.GOOGLE_SECRET,
 
-      clientId:
-        "625444603857-4igpobrhuviu4c5abrsonvsdastn6qnq.apps.googleusercontent.com",
-      clientSecret: "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",
-    }),
+    //   clientId:
+    //     "625444603857-4igpobrhuviu4c5abrsonvsdastn6qnq.apps.googleusercontent.com",
+    //   clientSecret: "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",
+    // }),
     CredentialsProvider({
       // The name to display on the sign in form (e.g. 'Sign in with...')
       type: "credentials",

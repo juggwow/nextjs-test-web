@@ -46,7 +46,7 @@ export default function Navbar() {
           className="flex flex-row gap-5"
         >
           <div>{name}</div>
-          <button onClick={signOut}>Sign Out</button>
+          <button onClick={()=>signOut({callbackUrl: `${window.location.origin}`})}>Sign Out</button>
         </div>
       )}
     </nav>

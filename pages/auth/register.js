@@ -2,6 +2,7 @@ import { redirect } from "next/dist/server/api-utils";
 import Link from "next/link";
 import { useState } from "react";
 import { signIn } from "next-auth/react";
+import { useRouter } from "next/router";
 
 export default function RegisterPage() {
   const [user, setUser] = useState({
@@ -9,32 +10,28 @@ export default function RegisterPage() {
     password: "",
     cpassword: "",
   });
+
+  const router = useRouter()
+
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const url = process.env.NEXT_PUBLIC_HOST+"/register"
-    console.log(url)
     if (user.password !== user.cpassword) {
       window.alert("Password is not correct");
       return;
     }
-    try {
-      const res = await fetch(process.env.NEXT_PUBLIC_HOST+"/register", {
-        method: "POST",
-        body: JSON.stringify({
-          username: user.username,
-          password: user.password,
-        }),
-      });
-      if (res.status !== 200) {
-        window.alert("Something Wrong");
-        return;
-      }
-      window.alert("Success, Pls Sign In");
-      signIn();
-    } catch (err) {
-      window.alert("Server is not response");
+    const req = { username: user.username, password: user.password };
+    const res = await fetch("/api/register", {
+      method: "POST",
+      body: JSON.stringify(req),
+    });
+    if (res.status === 200) {
+      window.alert("Success. Pls, log in")
+      router.push("/auth/login");
     }
+    const data = await res.json();
+    window.alert(data.message);
   };
+
   return (
     <div className="min-h-full bg-gray-100 flex justify-center items-center">
       <div className="flex-col w-5/6 mt-32">
