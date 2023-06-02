@@ -8,7 +8,7 @@ services:
     environment:
       - NEXTAUTH_URL=http://localhost:3000
       - NEXTAUTH_SECRET= 235a2df63aa5874d9b88a76a1c7208fe
-      - HOST = http://api:8624
+      - NEXT_PUBLIC_HOST = http://api:8624
     networks:
       - pattana
 
