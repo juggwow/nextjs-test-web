@@ -1,0 +1,18 @@
+version: "3.9"
+
+services:
+  front:
+    image: patna/front
+    ports:
+      - "8623:3000"
+    environment:
+      - NEXTAUTH_URL=http://localhost:3000
+      - NEXTAUTH_SECRET= 235a2df63aa5874d9b88a76a1c7208fe
+      - HOST = http://api:8624
+    networks:
+      - pattana
+
+networks:
+  pattana:
+    external:
+      name: pattana
